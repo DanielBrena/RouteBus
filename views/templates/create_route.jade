@@ -1,0 +1,34 @@
+//Created by DanielBrena on 23/05/15.
+extends ../layout
+
+block content
+   div(ng-controller='RuteCreateCtrl')
+      .row
+         .side-menu
+            .navbar.navbar-default(role='navigation')
+               .navbar-header
+                  .brand-wrapper
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                     .brand-name-wrapper
+                        a.navbar-brand(href='#') Crear Ruta
+                     a(data-toggle='collapse',href='#search', class='btn btn-default', id='search-trigger')
+                        span.glyphicon.glyphicon-search
+                     #search.panel-collapse.collapse
+                        .panel-body
+                           form(class='navbar-form',role='search')
+                              .form-group
+                                 input(type='text',ng-model='searchTxt',class='form-control',placeholder='Search')
+                              button(type='button',class='btn btn-default',ng-click='searchEvt()')
+                                 span.glyphicon.glyphicon-ok
+            .side-menu-containe
+               ul.nav.navbar-nav
+                  li
+                     #contenedor
+
+         .container-fluid
+            .side-body
+               .myFixed
+                  #mapa
