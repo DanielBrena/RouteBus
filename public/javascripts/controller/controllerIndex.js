@@ -16,17 +16,26 @@ routeBus.controller('IndexCtrl',function($scope,socket,CONFIG){
         $scope.ubicacion.lat  = data.lat;
         $scope.ubicacion.lng = data.lng;
 
-
+        var image = {
+            url: 'https://stark-ridge-4075.herokuapp.com/images/iconoAutobus.png',
+            // This marker is 20 pixels wide by 32 pixels tall.
+            size: new google.maps.Size(20, 32),
+            // The origin for this image is 0,0.
+            origin: new google.maps.Point(0,0),
+            // The anchor for this image is the base of the flagpole at 0,32.
+            anchor: new google.maps.Point(0, 32)
+        };
 
         $scope.marker = new google.maps.Marker({
             position: new google.maps.LatLng($scope.ubicacion.lat,$scope.ubicacion.lng),
             zIndex: google.maps.Marker.MAX_ZINDEX + 2,
-            animation: google.maps.Animation.DROP
+            animation: google.maps.Animation.DROP,
+            icon:image
         });
         $scope.marker.setMap($scope.mapa);
 
         //$scope.marker.setMap(null);
-        console.log(data.lat);
+        console.log(data.lat) + data.lng);
     });
 
 
