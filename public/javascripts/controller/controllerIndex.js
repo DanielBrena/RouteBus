@@ -16,7 +16,7 @@ routeBus.controller('IndexCtrl',function($scope,socket,CONFIG){
         $scope.ubicacion.lat  = data.lat;
         $scope.ubicacion.lng = data.lng;
 
-       
+
 
         $scope.marker = new google.maps.Marker({
             position: new google.maps.LatLng($scope.ubicacion.lat,$scope.ubicacion.lng),

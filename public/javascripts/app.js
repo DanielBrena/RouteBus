@@ -6,5 +6,5 @@ Parse.initialize("feN1oQBjjIwhAm17ssUClGit9YzUGe3otyBQnuCu", "WCjSy03NpDIHs73xif
 var routeBus = angular.module('routeBus',[]);
 routeBus.constant('CONFIG',{
    'URL':'https://stark-ridge-4075.herokuapp.com',
-    'PORT':'3000'
+    'PORT':'80'
 });
