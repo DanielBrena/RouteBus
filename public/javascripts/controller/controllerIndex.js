@@ -25,7 +25,7 @@ routeBus.controller('IndexCtrl',function($scope,socket,CONFIG){
         });
         $scope.marker.setMap($scope.mapa);
 
-        $scope.marker.setMap(null);
+        //$scope.marker.setMap(null);
         console.log(data.lat + " : " + data.lng);
     });
 
