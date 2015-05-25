@@ -17,7 +17,7 @@ routeBus.controller('IndexCtrl',function($scope,socket,CONFIG){
         $scope.ubicacion.lng = data.lng;
 
         var image = {
-            url: 'https://stark-ridge-4075.herokuapp.com/images/iconoAutobus.png',
+            url: CONFIG.URL + ":" + CONFIG.PORT + "/images/iconoAutobus.png",
             // This marker is 20 pixels wide by 32 pixels tall.
             size: new google.maps.Size(20, 32),
             // The origin for this image is 0,0.
