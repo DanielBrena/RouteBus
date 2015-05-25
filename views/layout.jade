@@ -5,15 +5,21 @@ html(ng-app='routeBus')
     link(rel='stylesheet', href='/stylesheets/less/bootstrap.css')
 
     link(rel='stylesheet', href='/stylesheets/create_rute.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
     script(src='javascripts/jquery.js')
     script(src='http://maps.google.com/maps/api/js?sensor=true')
     script(src='javascripts/angular/angular.js')
+    //script(src="javascripts/socket.io.js")
+    script(src='https://cdn.socket.io/socket.io-1.3.5.js')
     script(src='javascripts/angular/angular-route.js')
     script(src='javascripts/angular/angular-cookies.js')
     script(src='http://www.parsecdn.com/js/parse-1.2.12.min.js')
     script(src='javascripts/bootstrap.js')
     script(src='javascripts/app.js')
+    script(src='javascripts/factory/factorySocket.js')
     script(src='javascripts/controller/controllerRute.js')
+    script(src='javascripts/controller/controllerIndex.js')
+    script(src='javascripts/controller/controllerAdmin.js')
   body
     .navbar.navbar-default
       .container-fluid

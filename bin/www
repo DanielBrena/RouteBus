@@ -30,6 +30,45 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 /**
+ * Socket
+ */
+//var socket = require('socket.io');
+var io = require('socket.io').listen(server);
+server.listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
+/*var io = socket(server,{
+  log: false,
+  agent: false,
+  origins: '*:*',
+  transports: [
+    'websocket',
+    'flashsocket',
+    'htmlfile',
+    'xhr-polling',
+    'jsonp-polling',
+    'polling'
+  ]
+});
+*/
+//io.listen(app.get('port'));
+
+
+io.sockets.on('connection', function (socket) {
+
+  socket.on('send:message', function (data) {
+    socket.broadcast.emit('send:message', {
+      //text: data.message
+      lat:data.lat,
+      lng:data.lng
+    });
+  });
+
+});
+
+
+/**
  * Normalize a port into a number, string, or false.
  */
 

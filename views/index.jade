@@ -1,4 +1,24 @@
 extends layout
 
 block content
-  h1
+  div(ng-controller='IndexCtrl')
+    .row
+      .container-fluid
+        div#rutas
+          .row
+            .col-lg-3
+            .col-lg-6
+              .main-container
+                .panel-body
+                  form.form-horizontal
+                    .form-group
+                      .row
+                        .col-lg-8
+                          select.form-control(ng-options='r.id as r.get("nombre") for r in arreglo.rutas',ng-model='arreglo.ruta')
+
+                            option(value='todos',selected) Todas las rutas
+                        .col-lg-4
+                          input(type='button',class='btn btn-default',value='Mostrar',ng-click='mostrarEvt()')
+            .col-lg-3
+        .myFixed
+          #mapa_index

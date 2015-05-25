@@ -1,0 +1,45 @@
+//Created by DanielBrena on 25/05/15.
+
+extends ../layout
+block content
+   div(ng-controller='PersonalCtrl')
+      .row
+         .col-lg-3
+         .col-lg-6
+            .main-container
+               h4 {{titulo}}
+               form.form-horizontal(ng-submit='crear(conductor)')
+                  .form-group
+                     input(type='text',class='form-control', ng-model='conductor.nombre',placeholder='Nombre')
+                  .form-group
+                     input(type='text',class='form-control', ng-model='conductor.apellido_paterno',placeholder='Apellido Paterno')
+                  .form-group
+                     input(type='text',class='form-control', ng-model='conductor.apellido_materno',placeholder='Apellido Materno')
+                  .form-group
+                     select(class='form-control',ng-model='conductor.sexo')
+                        option(value='Masculino', selected) Masculino
+                        option(value='Femenino') Femenino
+                  .form-group
+                     input(type='text',class='form-control', ng-model='conductor.licencia',placeholder='Numero de licencia')
+                  .form-group
+                     .col-sm-offset-2.col-sm-10
+                        input(class='btn btn-btn-default',type='submit',value='Crear')
+         .col-lg-3
+      .row
+         .col-lg-3
+         .col-lg-6
+            table.table.table-hove
+               thead
+                  tr
+                     th #
+                     th Nombre
+                     th Apellido Paterno
+                     th Apellido Materno
+                     th Sexo
+                     th Numero de Licencia
+               tbody
+                  div(ng-repeat='c in conductores track by $index')
+                     tr
+                        div(ng-repeat='value in c.f')
+                           th {{value.get('nombre')}}
+         .col-lg-3

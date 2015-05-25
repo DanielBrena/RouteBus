@@ -24,10 +24,20 @@ block content
                               button(type='button',class='btn btn-default',ng-click='searchEvt()')
                                  span.glyphicon.glyphicon-ok
             .side-menu-containe
-               ul.nav.navbar-nav
+               ul.nav.navbar-nav(style='width:100%')
                   li
                      #contenedor
-
+                  li
+                     .brand-wrapper
+                        #search
+                           .panel-body
+                              form(class='navbar-form',role='search')
+                                 .form-group
+                                    input(type='text',ng-model='nombreTxt',class='form-control',placeholder='Nombre de la Ruta')
+                                 .form-group
+                                   textarea(rows='5',cols='10',ng-model='descripcionTxt',class='form-control',placeholder='Descripción',style='resize:none;width:100%')
+                                 button(type='button',class='btn btn-default',ng-click='createEvt()')
+                                    span.glyphicon.glyphicon-plus
          .container-fluid
             .side-body
                .myFixed
